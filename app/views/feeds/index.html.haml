@@ -1,1 +1,12 @@
-%strong= 'test'
+.container
+  - @feeds.each do |feed|
+    %h4= link_to feed.site_name, feed.site_url, class: 'site-title', target: '_blank'
+
+    %table.table.table-striped
+      - feed.entries.each do |entry|
+        %tr
+          %td
+            %small
+              = create_publish_date(entry.publish_datetime.to_s)
+            %br
+            = link_to entry.title, entry.url, target: '_blank'

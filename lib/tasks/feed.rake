@@ -8,7 +8,8 @@ namespace :feed do
     Entry.delete_all
 
     Feed.each do |f|
-      feed_entries = get_feed_entries(f.url)
+      puts "# requesting to #{f.site_name} ..."
+      feed_entries = get_feed_entries(f.feed_url)
       feed_entries.items.each do |entry|
         f.entries << Entry.new(title: entry.title, url: entry.link, publish_datetime: entry.pubDate)
         f.save

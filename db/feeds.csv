@@ -1,6 +1,6 @@
-Techcrunch,http://techcrunch.com/feed/
-TechnoBuffalo,http://www.technobuffalo.com/feed/
-Verge,http://www.theverge.com/rss/frontpage
-CNET,http://feeds.cnet.com/cnet
-AndroidHeadlines,http://www.androidheadlines.com/feed
-gdgt,http://gdgt.com/feed/
+Techcrunch,http://techcrunch.com,http://techcrunch.com/feed/
+TechnoBuffalo,http://www.technobuffalo.com,http://www.technobuffalo.com/feed/
+Verge,http://www.theverge.com,http://www.theverge.com/rss/frontpage
+CNET,http://www.cnet.com,http://feeds.cnet.com/cnet
+AndroidHeadlines,http://www.androidheadlines.com,http://www.androidheadlines.com/feed
+gdgt,http://gdgt.com,http://gdgt.com/feed/
