@@ -1,6 +1,20 @@
-a.site-title{
+a.site-title {
   color: #000;
   &:hover {
     color: #000;
   }
+}
+
+.entry-link-container {
+  height: 30px;
+  vertical-align: middle;
+}
+
+.fb-like-ex {
+  vertical-align: middle;
+}
+
+.hatena-like-ex {
+  vertical-align: middle;
+  padding-bottom: 5px;
 }

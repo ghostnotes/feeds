@@ -9,4 +9,8 @@
             %small
               = create_publish_date(entry.publish_datetime.to_s)
             %br
-            = link_to entry.title, entry.url, target: '_blank'
+            .entry-link-container
+              = link_to entry.title, entry.url, target: '_blank'
+              &nbsp;
+              = get_facebook_like_tag(entry.url)
+              = get_hatena_bookmark_tag(entry.title, entry.url)
