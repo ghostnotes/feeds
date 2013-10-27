@@ -8,11 +8,18 @@ namespace :feed do
     Entry.delete_all
 
     Feed.each do |f|
-      puts "# requesting to #{f.site_name} ..."
-      feed_entries = get_feed_entries(f.feed_url)
-      feed_entries.items.each do |entry|
-        f.entries << Entry.new(title: entry.title, url: entry.link, publish_datetime: entry.pubDate)
-        f.save
+      begin
+        start_time = Time.now
+        feed_entries = get_feed_entries(f.feed_url)
+        feed_entries.items.each do |entry|
+          f.entries << Entry.new(title: entry.title, url: entry.link, publish_datetime: entry.pubDate)
+          f.save
+        end
+
+        puts "# Succeeded to get the feed data of #{f.site_name} in [ #{Time.now - start_time} sec ]."
+      rescue => ex
+        puts "## Failed to request to #{f.site_name} because of the unexpected error -> [ #{ex.message} ]"
+        next
       end
     end
   end
