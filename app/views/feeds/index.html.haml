@@ -2,6 +2,8 @@
   - @feeds.each do |feed|
     %h4= link_to feed.site_name, feed.site_url, class: 'site-title', target: '_blank'
 
+    = check_entries(feed)
+
     %table.table.table-striped
       - feed.entries.each do |entry|
         %tr

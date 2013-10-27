@@ -21,4 +21,10 @@ module FeedsHelper
   def get_hatena_bookmark_tag(title, url)
     "<a href=\"http://b.hatena.ne.jp/entry/#{url}\" class=\"hatena-bookmark-button\" data-hatena-bookmark-title=\"#{title}\" data-hatena-bookmark-layout=\"simple-balloon\" title=\"このエントリーをはてなブックマークに追加\"><img src=\"http://b.st-hatena.com/images/entry-button/button-only@2x.png\" alt=\"このエントリーをはてなブックマークに追加\" width=\"20\" height=\"25\" style=\"border: none;\" /></a><script type=\"text/javascript\" src=\"http://b.st-hatena.com/js/bookmark_button.js\" charset=\"utf-8\" async=\"async\"></script>".html_safe
   end
+
+  def check_entries(feed)
+    if feed.entries.blank?
+      content_tag(:div, I18n.t('message.error.no_entries'), class: 'alert alert-error')
+    end
+  end
 end

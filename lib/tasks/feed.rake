@@ -1,7 +1,7 @@
 require 'rss'
 require 'date'
 
-DEFAULT_MAX_FEED_ENTRY_LENGTH = 5
+DEFAULT_MAX_FEED_ENTRY_LENGTH = 8
 
 namespace :feed do
   task :gathering => :environment do

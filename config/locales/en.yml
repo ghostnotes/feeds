@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  message:
+    error:
+      no_entries: "It has no entries. Probably unexpected error has occurred. Check the log, please?"
