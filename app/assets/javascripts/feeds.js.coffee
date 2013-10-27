@@ -4,4 +4,6 @@
 do ->
   window.onload= ->
     $('.hatena-bookmark-button-frame').addClass('hatena-like-ex')
+#    $(':iframe[id^=twitter-widget-]').each ->
+#      console.log 'aaa'
     return
