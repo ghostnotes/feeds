@@ -3,6 +3,17 @@ module FeedsHelper
     DateTime.parse(date).strftime('%d/%m/%Y %H:%M')
   end
 
+  def show_social_buttons(entry)
+    unless is_mobile_request?
+      '&nbsp;&nbsp;'.html_safe +
+      get_google_plus_one_tag(entry.url) +
+      get_twitter_share_tag(entry.title, entry.url) +
+      get_facebook_like_tag(entry.url) +
+      '&nbsp;&nbsp;'.html_safe +
+      get_hatena_bookmark_tag(entry.title, entry.url)
+    end
+  end
+
   def get_facebook_script_tag
     '<div id="fb-root"></div>
      <script>(function(d, s, id) {
