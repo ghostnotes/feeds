@@ -18,6 +18,19 @@ module FeedsHelper
     "<div class=\"fb-like fb-like-ex\" data-href=\"#{url}\" data-width=\"The pixel width of the plugin\" data-height=\"The pixel height of the plugin\" data-colorscheme=\"light\" data-layout=\"button_count\" data-action=\"like\" data-show-faces=\"false\" data-send=\"false\"></div>".html_safe
   end
 
+  def get_google_plus_script_tag
+    '<script type="text/javascript">
+     (function() {
+       var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
+       po.src = \'https://apis.google.com/js/plusone.js\';
+       var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
+     })();</script>'.html_safe
+  end
+
+  def get_google_plus_one_tag(url)
+    "<div class=\"g-plusone\" data-size=\"small\" data-href=\"#{url}\"></div>".html_safe
+  end
+
   def get_hatena_bookmark_tag(title, url)
     "<a href=\"http://b.hatena.ne.jp/entry/#{url}\" class=\"hatena-bookmark-button\" data-hatena-bookmark-title=\"#{title}\" data-hatena-bookmark-layout=\"simple-balloon\" title=\"このエントリーをはてなブックマークに追加\"><img src=\"http://b.st-hatena.com/images/entry-button/button-only@2x.png\" alt=\"このエントリーをはてなブックマークに追加\" width=\"20\" height=\"25\" style=\"border: none;\" /></a><script type=\"text/javascript\" src=\"http://b.st-hatena.com/js/bookmark_button.js\" charset=\"utf-8\" async=\"async\"></script>".html_safe
   end

@@ -14,5 +14,7 @@
             .entry-link-container
               = link_to entry.title, entry.url, target: '_blank'
               &nbsp;
+              = get_google_plus_one_tag(entry.url)
               = get_facebook_like_tag(entry.url)
+              &nbsp;
               = get_hatena_bookmark_tag(entry.title, entry.url)
