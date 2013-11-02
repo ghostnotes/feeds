@@ -5,12 +5,13 @@ module FeedsHelper
 
   def show_social_buttons(entry)
     unless is_mobile_request?
-      '&nbsp;&nbsp;'.html_safe +
-      get_google_plus_one_tag(entry.url) +
-      get_twitter_share_tag(entry.title, entry.url) +
-      get_facebook_like_tag(entry.url) +
-      '&nbsp;&nbsp;'.html_safe +
-      get_hatena_bookmark_tag(entry.title, entry.url)
+      get_google_plus_one_tag(entry.url)
+#      '&nbsp;&nbsp;'.html_safe +
+#      get_google_plus_one_tag(entry.url) +
+#      get_twitter_share_tag(entry.title, entry.url) +
+#      get_facebook_like_tag(entry.url) +
+#      '&nbsp;&nbsp;'.html_safe +
+#      get_hatena_bookmark_tag(entry.title, entry.url)
     end
   end
 
@@ -39,7 +40,7 @@ module FeedsHelper
   end
 
   def get_google_plus_one_tag(url)
-    "<div class=\"g-plusone\" data-size=\"small\" data-href=\"#{url}\"></div>".html_safe
+    content_tag(:div, '', class: 'g-plusone', data: { size: 'small', annotation: 'none', href: url } )
   end
 
   def get_twitter_share_tag(title, url)

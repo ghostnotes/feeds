@@ -1,3 +1,5 @@
+= get_facebook_script_tag
+
 .container
   - @feeds.each do |feed|
     %h4= link_to feed.site_name, feed.site_url, class: 'site-title', target: '_blank'
@@ -14,3 +16,5 @@
             .entry-link-container
               = link_to entry.title, entry.url, target: '_blank'
               = show_social_buttons(entry)
+
+= get_google_plus_script_tag
